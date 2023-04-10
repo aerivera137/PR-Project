@@ -1,0 +1,202 @@
+Version identifier: 22.1.0.0 | 2022-03-09 | 1a383f8ce
+CPXPARAM_LPMethod                                4
+CPXPARAM_SolutionType                            2
+CPXPARAM_Simplex_Tolerances_Optimality           1.0000000000000001e-05
+CPXPARAM_Simplex_Tolerances_Feasibility          1.0000000000000001e-05
+CPXPARAM_TimeLimit                               110000
+CPXPARAM_MIP_Tolerances_MIPGap                   0.001
+CPXPARAM_Barrier_Limits_ObjRange                 9.9999999999999993e+74
+Tried aggregator 1 time.
+LP Presolve eliminated 989890 rows and 138793 columns.
+Aggregator did 70080 substitutions.
+Reduced LP has 2952192 rows, 1499419 columns, and 10188236 nonzeros.
+Presolve time = 12.46 sec. (8644.55 ticks)
+Parallel mode: using up to 32 threads for barrier.
+
+***NOTE: Found 52 dense columns.
+
+Number of nonzeros in lower triangle of A*A' = 18616499
+Elapsed ordering time = 11.28 sec. (10000.47 ticks)
+Using Nested Dissection ordering
+Total time for automatic ordering = 38.09 sec. (35775.63 ticks)
+Summary statistics for Cholesky factor:
+  Threads                   = 32
+  Rows in Factor            = 2952244
+  Integer space required    = 11104790
+  Total non-zeros in factor = 82658142
+  Total FP ops to factor    = 21864230772
+ Itn      Primal Obj        Dual Obj  Prim Inf Upper Inf  Dual Inf Inf Ratio
+   0   1.1959880e+05  -3.0928425e+06  5.21e+08  1.14e+08  2.70e+07  1.00e+00
+   1   1.4489012e+03  -2.1577113e+04  4.74e+06  1.04e+06  1.93e+05  5.14e-03
+   2   1.3282124e+03  -1.1494799e+04  3.23e+06  7.05e+05  1.08e+05  5.11e-03
+   3   9.5088271e+02  -5.3356459e+03  1.88e+06  4.11e+05  5.25e+04  6.74e-03
+   4   7.8890177e+02  -1.1848026e+03  1.41e+06  3.07e+05  1.40e+04  1.43e-02
+   5   4.2087201e+02  -3.6598595e+02  6.19e+05  1.35e+05  5.27e+03  3.76e-02
+   6   3.1677308e+02  -6.6657592e+01  3.70e+05  8.07e+04  2.27e+03  9.03e-02
+   7   3.0374750e+02  -1.2252421e+01  3.35e+05  7.31e+04  1.76e+03  1.21e-01
+   8   2.9928990e+02   2.7506879e+01  3.13e+05  6.84e+04  1.48e+03  1.48e-01
+   9   2.9210271e+02   7.0573118e+01  2.85e+05  6.22e+04  1.14e+03  2.03e-01
+  10   2.9532394e+02   1.2559516e+02  2.64e+05  5.77e+04  9.06e+02  2.75e-01
+  11   2.8340249e+02   1.6155087e+02  2.07e+05  4.53e+04  6.18e+02  4.65e-01
+  12   2.7741020e+02   1.7107165e+02  1.91e+05  4.17e+04  4.88e+02  6.41e-01
+  13   2.7706978e+02   1.7459758e+02  1.89e+05  4.13e+04  4.63e+02  6.85e-01
+  14   2.7734849e+02   1.7674734e+02  1.87e+05  4.09e+04  4.56e+02  6.98e-01
+  15   2.7545907e+02   1.7860236e+02  1.80e+05  3.94e+04  4.39e+02  7.26e-01
+  16   2.6789382e+02   1.8987443e+02  1.56e+05  3.42e+04  3.12e+02  1.17e+00
+  17   2.6636635e+02   1.9669941e+02  1.52e+05  3.32e+04  2.29e+02  1.78e+00
+  18   2.6107610e+02   2.0333674e+02  1.33e+05  2.91e+04  1.71e+02  2.69e+00
+  19   2.6105026e+02   2.1185829e+02  1.32e+05  2.89e+04  1.44e+02  3.63e+00
+  20   2.6104629e+02   2.1745990e+02  1.14e+05  2.50e+04  1.28e+02  4.51e+00
+  21   2.6113096e+02   2.3175441e+02  1.07e+05  2.34e+04  8.71e+01  8.55e+00
+  22   2.6119816e+02   2.3282701e+02  1.07e+05  2.33e+04  8.50e+01  8.96e+00
+  23   2.6131522e+02   2.3308077e+02  1.07e+05  2.33e+04  8.49e+01  8.95e+00
+  24   2.6166726e+02   2.3316359e+02  1.08e+05  2.35e+04  8.54e+01  8.77e+00
+  25   2.6155533e+02   2.3815440e+02  1.05e+05  2.30e+04  6.71e+01  1.22e+01
+  26   2.6175417e+02   2.4017440e+02  1.04e+05  2.28e+04  6.40e+01  1.31e+01
+  27   2.6213808e+02   2.3983410e+02  1.08e+05  2.35e+04  6.61e+01  1.22e+01
+  28   2.6203583e+02   2.4464356e+02  1.05e+05  2.29e+04  4.89e+01  1.96e+01
+  29   2.6730281e+02   2.5341615e+02  8.91e+04  1.95e+04  4.07e+01  2.40e+01
+  30   2.6681760e+02   2.5421360e+02  7.89e+04  1.72e+04  3.73e+01  2.76e+01
+  31   2.9154940e+02   3.0148593e+02  7.62e+04  1.66e+04  3.49e+01  2.49e+01
+  32   3.3671025e+02   3.5973660e+02  6.57e+04  1.43e+04  2.85e+01  2.47e+01
+  33   3.4777773e+02   3.6552374e+02  6.45e+04  1.41e+04  2.82e+01  2.35e+01
+  34   3.5255252e+02   3.6970232e+02  6.41e+04  1.40e+04  2.80e+01  2.32e+01
+  35   3.5685655e+02   3.7933096e+02  6.37e+04  1.39e+04  2.76e+01  2.36e+01
+  36   3.6993321e+02   4.2666422e+02  6.26e+04  1.37e+04  2.59e+01  2.60e+01
+  37   3.8058063e+02   4.5665488e+02  6.19e+04  1.35e+04  2.50e+01  2.72e+01
+  38   3.8876033e+02   4.8191220e+02  6.14e+04  1.34e+04  2.43e+01  2.84e+01
+  39   4.0206254e+02   4.9901805e+02  6.06e+04  1.32e+04  2.38e+01  2.85e+01
+  40   4.6128382e+02   5.0784171e+02  5.72e+04  1.25e+04  2.36e+01  2.50e+01
+  41   5.4260009e+02   5.4753563e+02  5.33e+04  1.16e+04  2.28e+01  2.30e+01
+  42   5.7546875e+02   6.1224238e+02  5.18e+04  1.13e+04  2.15e+01  2.50e+01
+  43   7.2916246e+02   8.1681232e+02  4.42e+04  9.64e+03  1.71e+01  3.34e+01
+  44   7.3800715e+02   9.5059874e+02  4.37e+04  9.54e+03  1.40e+01  4.82e+01
+  45   8.3439690e+02   9.6744748e+02  4.33e+04  9.45e+03  1.40e+01  4.33e+01
+  46   9.3442593e+02   1.0414012e+03  3.77e+04  8.23e+03  1.24e+01  5.29e+01
+  47   9.6717120e+02   1.0819585e+03  3.61e+04  7.88e+03  1.16e+01  5.89e+01
+  48   1.0051830e+03   1.1232744e+03  3.43e+04  7.48e+03  1.09e+01  6.58e+01
+  49   1.0905661e+03   1.2297832e+03  3.03e+04  6.61e+03  9.01e+00  9.13e+01
+  50   1.1376035e+03   1.3287062e+03  2.82e+04  6.16e+03  7.39e+00  1.29e+02
+  51   1.2046453e+03   1.3946461e+03  2.53e+04  5.53e+03  6.33e+00  1.67e+02
+  52   1.2348557e+03   1.4385413e+03  2.41e+04  5.25e+03  5.67e+00  2.00e+02
+  53   1.2708104e+03   1.5384262e+03  2.26e+04  4.93e+03  4.20e+00  3.35e+02
+  54   1.3375700e+03   1.6084430e+03  1.99e+04  4.34e+03  3.18e+00  5.26e+02
+  55   1.4092984e+03   1.6515797e+03  1.71e+04  3.73e+03  2.60e+00  7.15e+02
+  56   1.4955203e+03   1.7171436e+03  1.38e+04  3.02e+03  1.79e+00  1.28e+03
+  57   1.6024918e+03   1.7657475e+03  9.90e+03  2.16e+03  1.23e+00  2.25e+03
+  58   1.6727098e+03   1.8060900e+03  7.42e+03  1.62e+03  8.06e-01  4.12e+03
+  59   1.7237129e+03   1.8349364e+03  5.66e+03  1.23e+03  5.19e-01  7.68e+03
+  60   1.7808215e+03   1.8661630e+03  3.72e+03  8.13e+02  2.29e-01  2.42e+04
+  61   1.8435572e+03   1.8757442e+03  1.62e+03  3.53e+02  1.44e-01  4.47e+04
+  62   1.8683681e+03   1.8831397e+03  8.52e+02  1.86e+02  9.11e-02  7.74e+04
+  63   1.8841753e+03   1.8927097e+03  3.70e+02  8.08e+01  2.49e-02  3.52e+05
+  64   1.8913145e+03   1.8947667e+03  1.50e+02  3.27e+01  1.00e-02  1.08e+06
+  65   1.8930798e+03   1.8955251e+03  9.64e+01  2.10e+01  5.02e-03  2.29e+06
+  66   1.8940705e+03   1.8959271e+03  6.63e+01  1.45e+01  2.24e-03  5.92e+06
+  67   1.8948376e+03   1.8961611e+03  4.34e+01  9.47e+00  7.92e-04  1.69e+07
+  68   1.8949519e+03   1.8961688e+03  3.99e+01  8.71e+00  7.33e-04  1.80e+07
+  69   1.8953772e+03   1.8962346e+03  2.70e+01  5.89e+00  2.40e-04  4.40e+07
+  70   1.8956297e+03   1.8962666e+03  1.95e+01  4.25e+00  9.06e-05  8.58e+07
+  71   1.8959877e+03   1.8962885e+03  9.02e+00  1.97e+00  2.76e-05  2.23e+08
+  72   1.8961688e+03   1.8962929e+03  3.76e+00  8.22e-01  1.57e-05  3.34e+08
+  73   1.8962193e+03   1.8962969e+03  2.31e+00  5.05e-01  6.53e-06  5.96e+08
+  74   1.8962316e+03   1.8962985e+03  1.96e+00  4.29e-01  3.79e-06  8.75e+08
+  75   1.8962419e+03   1.8962990e+03  1.67e+00  3.65e-01  2.91e-06  1.03e+09
+  76   1.8962485e+03   1.8962995e+03  1.48e+00  3.24e-01  2.31e-06  1.20e+09
+  77   1.8962611e+03   1.8962997e+03  1.13e+00  2.47e-01  2.03e-06  1.30e+09
+  78   1.8962631e+03   1.8962997e+03  1.07e+00  2.35e-01  2.00e-06  1.32e+09
+  79   1.8962651e+03   1.8962998e+03  1.02e+00  2.22e-01  1.93e-06  1.36e+09
+  80   1.8962669e+03   1.8963000e+03  9.67e-01  2.11e-01  1.69e-06  1.50e+09
+  81   1.8962683e+03   1.8963001e+03  9.30e-01  2.03e-01  1.56e-06  1.60e+09
+  82   1.8962688e+03   1.8963001e+03  9.15e-01  2.00e-01  1.55e-06  1.60e+09
+  83   1.8962721e+03   1.8963004e+03  8.23e-01  1.80e-01  1.26e-06  1.87e+09
+  84   1.8962738e+03   1.8963005e+03  7.74e-01  1.69e-01  1.16e-06  1.98e+09
+  85   1.8962757e+03   1.8963006e+03  7.24e-01  1.58e-01  1.08e-06  2.10e+09
+  86   1.8962765e+03   1.8963006e+03  7.01e-01  1.53e-01  1.03e-06  2.17e+09
+  87   1.8962787e+03   1.8963007e+03  6.38e-01  1.39e-01  9.32e-07  2.35e+09
+  88   1.8962804e+03   1.8963008e+03  5.93e-01  1.29e-01  8.58e-07  2.51e+09
+  89   1.8962809e+03   1.8963009e+03  5.77e-01  1.26e-01  7.66e-07  2.73e+09
+  90   1.8962827e+03   1.8963011e+03  5.29e-01  1.15e-01  6.06e-07  3.25e+09
+  91   1.8962902e+03   1.8963012e+03  3.20e-01  6.99e-02  5.03e-07  3.73e+09
+  92   1.8962915e+03   1.8963013e+03  2.87e-01  6.26e-02  4.74e-07  3.93e+09
+  93   1.8962924e+03   1.8963017e+03  2.62e-01  5.72e-02  2.05e-07  8.31e+09
+  94   1.8962970e+03   1.8963020e+03  1.36e-01  2.98e-02  4.09e-08  3.11e+10
+  95   1.8962994e+03   1.8963020e+03  7.06e-02  1.54e-02  2.00e-08  4.13e+10
+  96   1.8963015e+03   1.8963020e+03  1.51e-02  3.30e-03  8.21e-09  9.90e+10
+  97   1.8963018e+03   1.8963020e+03  5.34e-03  1.17e-03  8.36e-09  1.32e+11
+  98   1.8963020e+03   1.8963020e+03  2.29e-03  5.01e-04  4.23e-08  2.35e+11
+Barrier time = 599.64 sec. (284741.56 ticks)
+
+Total time on 32 threads = 599.64 sec. (284741.56 ticks)
+Configuring Settings
+Configuring Solver
+Loading Inputs
+Reading Input CSV Files
+Network.csv Successfully Read!
+Load_data.csv Successfully Read!
+Fuels_data.csv Successfully Read!
+Generators_data.csv Successfully Read!
+Generators_variability.csv Successfully Read!
+Capacity_reserve_margin.csv Successfully Read!
+Energy_share_requirement.csv Successfully Read!
+CSV Files Successfully Read In From /home/aerivera/GenX-Local/GenX/Example_Systems/PuertoRico2030/2030/p2_2030_underground_lines
+Generating the Optimization Model
+Discharge Module
+Non-served Energy Module
+Investment Discharge Module
+Unit Commitment Module
+Emissions Module (for CO2 Policy modularization
+Transmission Module
+Dispatchable Resources Module
+Must-Run Resources Module
+Storage Resources Module
+Storage Investment Module
+Storage Core Resources Module
+Storage Resources with Symmetric Charge/Discharge Capacity Module
+Hydro Reservoir Core Resources Module
+Thermal (Unit Commitment) Resources Module
+C02 Policies Module
+Energy Share Requirement Policies Module
+Capacity Reserve Margin Policies Module
+Solving Model
+LP solved for primal
+Writing Output
+Time elapsed for writing costs is
+3.495472855
+Time elapsed for writing storage is
+2.329681738
+Time elapsed for writing nse is
+1.467018893
+Time elapsed for writing power balance is
+1.910624595
+Time elapsed for writing transmission flows is
+0.407492117
+Time elapsed for writing transmission losses is
+0.225857908
+Time elapsed for writing emissions is
+1.400291903
+Time elapsed for writing reliability is
+0.788754045
+Time elapsed for writing storage duals is
+1.010845259
+Time elapsed for writing commitment is
+0.468338339
+Time elapsed for writing startup is
+3.666832537
+Time elapsed for writing shutdown is
+0.586643953
+Time elapsed for writing time weights is
+0.182754159
+Time elapsed for writing reserve margin is
+0.385314021
+Time elapsed for writing capacity value is
+2.274638034
+Time elapsed for writing net revenue is
+1.736230955
+Wrote outputs to /home/aerivera/GenX-Local/GenX/Example_Systems/PuertoRico2030/2030/p2_2030_underground_lines/Results_1
+Time elapsed for writing is
+35.213402781
+Starting Model to Generate Alternatives (MGA) Iterations
+MGA Module
+Starting the first MGA iterationMin LNG
+Mon Apr 10 13:36:51 EDT 2023

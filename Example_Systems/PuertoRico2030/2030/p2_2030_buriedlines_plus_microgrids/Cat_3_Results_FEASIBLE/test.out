@@ -1,0 +1,150 @@
+Version identifier: 22.1.0.0 | 2022-03-09 | 1a383f8ce
+CPXPARAM_LPMethod                                4
+CPXPARAM_SolutionType                            2
+CPXPARAM_Simplex_Tolerances_Optimality           1.0000000000000001e-05
+CPXPARAM_Simplex_Tolerances_Feasibility          1.0000000000000001e-05
+CPXPARAM_TimeLimit                               110000
+CPXPARAM_MIP_Tolerances_MIPGap                   0.001
+CPXPARAM_Barrier_Limits_ObjRange                 9.9999999999999993e+74
+Tried aggregator 1 time.
+LP Presolve eliminated 2189738 rows and 286778 columns.
+Aggregator did 44185 substitutions.
+Reduced LP has 2005942 rows, 1377238 columns, and 7412871 nonzeros.
+Presolve time = 8.78 sec. (4584.71 ticks)
+Parallel mode: using up to 32 threads for barrier.
+Number of nonzeros in lower triangle of A*A' = 13305187
+Using Nested Dissection ordering
+Total time for automatic ordering = 14.42 sec. (15210.37 ticks)
+Summary statistics for Cholesky factor:
+  Threads                   = 32
+  Rows in Factor            = 2005942
+  Integer space required    = 7287949
+  Total non-zeros in factor = 58690882
+  Total FP ops to factor    = 11143221604
+ Itn      Primal Obj        Dual Obj  Prim Inf Upper Inf  Dual Inf Inf Ratio
+   0   5.7204149e+02  -1.9519069e+06  2.99e+06  1.15e+06  1.72e+06  1.00e+00
+   1   5.4866919e+02  -3.5139577e+05  3.90e+05  1.51e+05  3.09e+05  9.76e+00
+   2   5.4620357e+02  -6.4412069e+04  2.76e+04  1.07e+04  5.71e+04  6.23e+01
+   3   5.4601190e+02  -4.4417598e+03  1.04e+03  4.02e+02  4.38e+03  8.96e+02
+   4   5.4547790e+02  -6.4807286e+02  4.14e+02  1.60e+02  1.05e+03  3.01e+03
+   5   5.4525130e+02   2.7564640e+02  1.31e+02  5.06e+01  2.37e+02  1.34e+04
+   6   5.4507928e+02   4.5696243e+02  2.47e+01  9.57e+00  7.75e+01  4.11e+04
+   7   5.4499823e+02   5.0681510e+02  1.26e+01  4.88e+00  3.36e+01  9.51e+04
+   8   5.4496433e+02   5.1974756e+02  9.95e+00  3.85e+00  2.21e+01  1.44e+05
+   9   5.4493985e+02   5.2633387e+02  8.30e+00  3.21e+00  1.63e+01  1.96e+05
+  10   5.4492067e+02   5.3002829e+02  7.18e+00  2.78e+00  1.31e+01  2.45e+05
+  11   5.4490339e+02   5.3285223e+02  6.27e+00  2.43e+00  1.06e+01  3.03e+05
+  12   5.4488927e+02   5.3514573e+02  5.58e+00  2.16e+00  8.53e+00  3.75e+05
+  13   5.4487404e+02   5.3896532e+02  4.65e+00  1.80e+00  5.15e+00  6.21e+05
+  14   5.4484530e+02   5.4143641e+02  2.58e+00  9.96e-01  2.97e+00  1.07e+06
+  15   5.4483308e+02   5.4290003e+02  1.73e+00  6.68e-01  1.68e+00  1.90e+06
+  16   5.4482842e+02   5.4341169e+02  1.40e+00  5.42e-01  1.23e+00  2.59e+06
+  17   5.4482419e+02   5.4381847e+02  1.11e+00  4.27e-01  8.73e-01  3.65e+06
+  18   5.4482096e+02   5.4397027e+02  8.74e-01  3.38e-01  7.39e-01  4.31e+06
+  19   5.4481909e+02   5.4446884e+02  7.34e-01  2.84e-01  3.00e-01  1.06e+07
+  20   5.4481420e+02   5.4467595e+02  3.61e-01  1.40e-01  1.18e-01  2.70e+07
+  21   5.4481249e+02   5.4475633e+02  2.34e-01  9.05e-02  4.67e-02  6.72e+07
+  22   5.4481054e+02   5.4479402e+02  7.43e-02  2.87e-02  1.37e-02  2.24e+08
+  23   5.4481028e+02   5.4480554e+02  1.82e-02  7.05e-03  3.95e-03  7.76e+08
+  24   5.4481023e+02   5.4480907e+02  4.60e-03  1.78e-03  9.65e-04  3.17e+09
+  25   5.4481021e+02   5.4480999e+02  9.96e-04  3.85e-04  1.83e-04  1.67e+10
+  26   5.4481021e+02   5.4481018e+02  9.94e-05  3.84e-05  2.48e-05  1.23e+11
+  27   5.4481021e+02   5.4481021e+02  1.68e-05  6.50e-06  3.03e-06  1.01e+12
+  28   5.4481021e+02   5.4481021e+02  6.31e-09  2.06e-09  8.95e-09  3.41e+14
+Barrier time = 126.28 sec. (41387.27 ticks)
+
+Total time on 32 threads = 126.28 sec. (41387.27 ticks)
+Configuring Settings
+Configuring Solver
+Loading Inputs
+Reading Input CSV Files
+Network.csv Successfully Read!
+Load_data.csv Successfully Read!
+Fuels_data.csv Successfully Read!
+Generators_data.csv Successfully Read!
+Generators_variability.csv Successfully Read!
+CSV Files Successfully Read In From /home/aerivera/GenX-Local/GenX/Example_Systems/PuertoRico2030/2030/p2_2030_buriedlines_plus_microgrids
+Generating the Optimization Model
+Discharge Module
+Non-served Energy Module
+Investment Discharge Module
+Unit Commitment Module
+Emissions Module (for CO2 Policy modularization
+Transmission Module
+Dispatchable Resources Module
+Must-Run Resources Module
+Storage Resources Module
+Storage Investment Module
+Storage Core Resources Module
+Storage Resources with Symmetric Charge/Discharge Capacity Module
+Hydro Reservoir Core Resources Module
+Thermal (Unit Commitment) Resources Module
+C02 Policies Module
+HurricaneSim is on
+Starting hurricane sim
+There is a North-to-South buried line!
+There is a North-to-East buried line!
+There is a South-to-West buried line!
+5640
+5688
+3
+A VRE has failed - modifying variability
+Checking substations
+Peak demand in zone:
+468.0
+Number of substations:
+24
+Checking substations
+Peak demand in zone:
+1516.0
+Number of substations:
+76
+Checking substations
+Peak demand in zone:
+323.0
+Number of substations:
+17
+Checking substations
+Peak demand in zone:
+183.0
+Number of substations:
+10
+A less-vulnerable transmission line has failed - modifying power flow
+Returning outputs
+Writing hurricane outputs
+3
+Solving Model
+LP solved for primal
+Writing Output
+Time elapsed for writing costs is
+1.779029218
+Time elapsed for writing storage is
+0.69520874
+Time elapsed for writing nse is
+1.437459167
+Time elapsed for writing power balance is
+1.801708624
+Time elapsed for writing transmission flows is
+0.382547278
+Time elapsed for writing transmission losses is
+0.205017728
+Time elapsed for writing emissions is
+1.333226291
+Time elapsed for writing reliability is
+0.746895022
+Time elapsed for writing storage duals is
+4.215269283
+Time elapsed for writing commitment is
+0.453123795
+Time elapsed for writing startup is
+0.555461678
+Time elapsed for writing shutdown is
+0.553217791
+Time elapsed for writing time weights is
+0.182940682
+Time elapsed for writing net revenue is
+1.474996812
+Wrote outputs to /home/aerivera/GenX-Local/GenX/Example_Systems/PuertoRico2030/2030/p2_2030_buriedlines_plus_microgrids/Results
+Time elapsed for writing is
+27.7377645
+Mon Apr 10 12:41:45 EDT 2023

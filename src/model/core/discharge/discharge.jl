@@ -61,5 +61,6 @@ function discharge!(EP::Model, inputs::Dict, setup::Dict)
 
 		EP[:eESR] += eESRDischarge
 	end
-
+	
+	@constraint(EP, [t=1:T, y=1:G], EP[:vP][y,t] <= inputs["pP_Max"][y,t])
 end

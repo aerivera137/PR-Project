@@ -1,0 +1,91 @@
+Version identifier: 22.1.0.0 | 2022-03-09 | 1a383f8ce
+CPXPARAM_LPMethod                                4
+CPXPARAM_SolutionType                            2
+CPXPARAM_Simplex_Tolerances_Optimality           1.0000000000000001e-05
+CPXPARAM_Simplex_Tolerances_Feasibility          1.0000000000000001e-05
+CPXPARAM_TimeLimit                               110000
+CPXPARAM_MIP_Tolerances_MIPGap                   0.001
+CPXPARAM_Barrier_Limits_ObjRange                 9.9999999999999993e+74
+Infeasibility row 'c473046':  0 >= 16.421.
+Presolve time = 0.62 sec. (285.60 ticks)
+Barrier time = 0.62 sec. (285.60 ticks)
+
+Total time on 32 threads = 0.62 sec. (285.60 ticks)
+Configuring Settings
+Configuring Solver
+Loading Inputs
+Reading Input CSV Files
+Network.csv Successfully Read!
+Load_data.csv Successfully Read!
+Fuels_data.csv Successfully Read!
+Generators_data.csv Successfully Read!
+Generators_variability.csv Successfully Read!
+Energy_share_requirement.csv Successfully Read!
+CSV Files Successfully Read In From /home/aerivera/GenX-Local/GenX/Example_Systems/PuertoRico2030/2030/p2_2030_buriedlines_plus_microgrids
+Generating the Optimization Model
+Discharge Module
+Non-served Energy Module
+Investment Discharge Module
+Unit Commitment Module
+Emissions Module (for CO2 Policy modularization
+Transmission Module
+Dispatchable Resources Module
+Must-Run Resources Module
+Storage Resources Module
+Storage Investment Module
+Storage Core Resources Module
+Storage Resources with Symmetric Charge/Discharge Capacity Module
+Hydro Reservoir Core Resources Module
+Thermal (Unit Commitment) Resources Module
+C02 Policies Module
+Energy Share Requirement Policies Module
+HurricaneSim is on
+Starting hurricane sim
+There is a North-to-South buried line!
+There is a North-to-East buried line!
+There is a South-to-West buried line!
+6096
+6144
+1
+Checking substations
+Peak demand in zone:
+468.0
+Number of substations:
+24
+There is a microgrid protecting a substation
+Limiting microgrid output
+Number of remaining substations:
+23
+Checking substations
+Peak demand in zone:
+1516.0
+Number of substations:
+76
+There is a microgrid protecting a substation
+Limiting microgrid output
+Number of remaining substations:
+75
+Checking substations
+Peak demand in zone:
+323.0
+Number of substations:
+17
+There is a microgrid protecting a substation
+Limiting microgrid output
+Number of remaining substations:
+16
+Checking substations
+Peak demand in zone:
+183.0
+Number of substations:
+10
+There is a microgrid protecting a substation
+Limiting microgrid output
+Number of remaining substations:
+9
+Returning outputs
+Writing hurricane outputs
+1
+Solving Model
+MILP solved for primal
+Sun Apr  9 15:55:10 EDT 2023

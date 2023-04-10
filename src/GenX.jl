@@ -53,14 +53,15 @@ using Statistics
 
 # Uncomment if Gurobi or CPLEX active license and installations are there and the user intends to use either of them
 #using CPLEX
-#using Gurobi
-#using CPLEX
+using Gurobi
+using CPLEX
 #using MOI
 #using SCIP
 using BenchmarkTools
 using HiGHS
 using Clp
 using Cbc
+using Distributions
 
 # Global scaling factor used when ParameterScale is on to shift values from MW to GW
 # DO NOT CHANGE THIS (Unless you do so very carefully)
@@ -208,4 +209,8 @@ include("multi_stage/endogenous_retirement.jl")
 
 include("additional_tools/modeling_to_generate_alternatives.jl")
 include("additional_tools/method_of_morris.jl")
+
+# Hurricane Simulation
+include("model/core/hurricane_sim.jl")
+
 end

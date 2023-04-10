@@ -89,8 +89,12 @@ The power balance constraint of the model ensures that electricity demand is met
 ################################################################################
 function generate_model(setup::Dict,inputs::Dict,OPTIMIZER::MOI.OptimizerWithAttributes)
 
-	T = inputs["T"]     # Number of time steps (hours)
-	Z = inputs["Z"]     # Number of zones
+	T = inputs["T"]             # Number of time steps (hours)
+	Z = inputs["Z"]             # Number of zones
+	G = inputs["G"]             # Number of generators
+	L = inputs["L"]             # Number of transmission lines
+	COMMIT = inputs["COMMIT"]   # 
+	dfGen = inputs["dfGen"]     # Generators DataFrame
 
 	## Start pre-solve timer
 	presolver_start_time = time()
@@ -143,7 +147,7 @@ function generate_model(setup::Dict,inputs::Dict,OPTIMIZER::MOI.OptimizerWithAtt
 		reserves!(EP, inputs, setup)
 	end
 
-	if Z > 1
+	if Z > 1 
 		transmission!(EP, inputs, setup)
 	end
 
@@ -210,14 +214,38 @@ function generate_model(setup::Dict,inputs::Dict,OPTIMIZER::MOI.OptimizerWithAtt
 	if (setup["MinCapReq"] == 1)
 		minimum_capacity_requirement!(EP, inputs, setup)
 	end
-
-	## Define the objective function
+	
+	# Hurricane Simulation
+	if (setup["HurricaneSim"] == 1)
+	    println("HurricaneSim is on")
+	    category, P_HURRICANE, outages, line_availability, dfNSE, dfNSEHurricane = hurricane_sim!(EP,inputs)
+	    dfHurricaneOutages = DataFrame(outages,:auto)
+	    dfLineAvailability = DataFrame(line_availability,:auto)
+	    println("Writing hurricane outputs")
+	    println(string(category))
+	    CSV.write("hurricane_outages.csv", dfHurricaneOutages)
+	    CSV.write("hurricane_line_availability.csv", dfLineAvailability)
+	    CSV.write("hurricane_nse_gen.csv", dfNSE)
+	    CSV.write("hurricane_nse.csv", dfNSEHurricane)
+	    
+	    # For all generators in thermal cluster 
+	    @constraint(EP, cOutages[t=1:T, g in COMMIT], EP[:vCOMMIT][g,t] <= (1-outages[t,g]))
+	    
+	    # Accounting for failure in transmission lines	
+	    @constraints(EP, begin
+	        cMaxFlow_out[l=1:L, t=1:T], EP[:vFLOW][l,t] <= EP[:eAvail_Trans_Cap][l]*line_availability[t,l]
+	        cMaxFlow_in[l=1:L, t=1:T], EP[:vFLOW][l,t] >= -EP[:eAvail_Trans_Cap][l]*line_availability[t,l]
+	    end)
+	end
+	
+    ## Define the objective function
 	@objective(EP,Min,EP[:eObj])
-
+	
 	## Power balance constraints
 	# demand = generation + storage discharge - storage charge - demand deferral + deferred demand satisfaction - demand curtailment (NSE)
 	#          + incoming power flows - outgoing power flows - flow losses - charge of heat storage + generation from NACC
 	@constraint(EP, cPowerBalance[t=1:T, z=1:Z], EP[:ePowerBalance][t,z] == inputs["pD"][t,z])
+
 
 	## Record pre-solver time
 	presolver_time = time() - presolver_start_time
@@ -226,6 +254,6 @@ function generate_model(setup::Dict,inputs::Dict,OPTIMIZER::MOI.OptimizerWithAtt
 		JuMP.write_to_file(EP, filepath)
 		println("Model Printed")
     	end
-
+    
     return EP
 end

@@ -72,7 +72,7 @@ function ucommit!(EP::Model, inputs::Dict, setup::Dict)
 
 	EP[:eObj] += eTotalCStart
 
-	### Constratints ###
+	### Constraints ###
 	## Declaration of integer/binary variables
 	if setup["UCommit"] == 1 # Integer UC constraints
 		for y in COMMIT

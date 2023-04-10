@@ -55,6 +55,11 @@ function mga(EP::Model, path::AbstractString, setup::Dict, inputs::Dict, outpath
 	    # Read slack parameter representing desired increase in budget from the least cost solution
 	    slack = setup["ModelingtoGenerateAlternativeSlack"]
 
+        #======TEST======#
+        marker = false
+        
+        
+        
 	    ### Variables ###
 
 	    @variable(EP, vSumvP[TechTypes = 1:length(TechTypes), z = 1:Z] >= 0) # Variable denoting total generation from eligible technology of a given type
@@ -81,43 +86,137 @@ function mga(EP::Model, path::AbstractString, setup::Dict, inputs::Dict, outpath
 	    if !(isdir(outpath_min))
 	    	mkdir(outpath_min)
 	    end
+	    
+	    outpath_microgrid = joinpath(path, "MGAResults_maxmicrogridresults")
+	    if !(isdir(outpath_microgrid))
+	    	mkdir(outpath_microgrid)
+	    end
+	    
+	    outpath_buriedlines = joinpath(path, "MGAResults_maxburiedlinesresults")
+	    if !(isdir(outpath_buriedlines))
+	    	mkdir(outpath_buriedlines)
+	    end
+	    
+	    outpath_minlng = joinpath(path, "MGAResults_minlngresults")
+	    if !(isdir(outpath_minlng))
+	    	mkdir(outpath_minlng)
+	    end
 
 	    ### Begin MGA iterations for maximization and minimization objective ###
 	    mga_start_time = time()
 
 	    print("Starting the first MGA iteration")
-
-	    for i in 1:setup["ModelingToGenerateAlternativeIterations"]
-
-	    	# Create random coefficients for the generators that we want to include in the MGA run for the given budget
-	    	pRand = rand(length(unique(dfGen[dfGen[!, :MGA] .== 1, :Resource_Type])),length(unique(dfGen[!,:Zone])))
-
-	    	### Maximization objective
-	    	@objective(EP, Max, sum(pRand[tt,z] * vSumvP[tt,z] for tt in 1:length(TechTypes), z in 1:Z ))
-
-	    	# Solve Model Iteration
-	    	status = optimize!(EP)
-
-            # Create path for saving MGA iterations
-	    	mgaoutpath_max = joinpath(outpath_max, string("MGA", "_", slack,"_", i))
-
-	    	# Write results
-	    	write_outputs(EP, mgaoutpath_max, setup, inputs)
-
-	    	### Minimization objective
-	    	@objective(EP, Min, sum(pRand[tt,z] * vSumvP[tt,z] for tt in 1:length(TechTypes), z in 1:Z ))
-
-	    	# Solve Model Iteration
-	    	status = optimize!(EP)
-
-            # Create path for saving MGA iterations
-	    	mgaoutpath_min = joinpath(outpath_min, string("MGA", "_", slack,"_", i))
-
-	    	# Write results
-	    	write_outputs(EP, mgaoutpath_min, setup, inputs)
-
-	    end
-
+	    
+	    if setup["MaxMicrogrids"]==1
+	        println("Max Microgrids")
+	        @objective(EP,Max,sum(EP[:vCAP][g] for g in findall(x -> x == 1, dfGen[!,:MG])))
+	        status = optimize!(EP)
+	        compute_conflict!(EP)
+    	    list_of_conflicting_constraints = ConstraintRef[]
+            for (F, S) in list_of_constraint_types(EP)
+                for con in all_constraints(EP, F, S)
+                    if MOI.get(EP, MOI.ConstraintConflictStatus(), con) == MOI.IN_CONFLICT
+                        push!(list_of_conflicting_constraints, con)
+                        marker = true
+                    end
+                end
+            end
+            if marker == false
+                println(list_of_conflicting_constraints)
+            end
+            
+            outpath_microgrid = joinpath(outpath_microgrid,"1")
+            # Write results
+    	    write_outputs(EP, outpath_microgrid, setup, inputs)
+    	elseif setup["MaxBuriedLines"]==1
+    	    println("Max Buried Lines")
+	        @objective(EP,Max,sum(EP[:vCAP][g] for g in findall(x -> x == 1, dfGen[!,:BL])))
+	        status = optimize!(EP)
+	        compute_conflict!(EP)
+    	    list_of_conflicting_constraints = ConstraintRef[]
+            for (F, S) in list_of_constraint_types(EP)
+                for con in all_constraints(EP, F, S)
+                    if MOI.get(EP, MOI.ConstraintConflictStatus(), con) == MOI.IN_CONFLICT
+                        push!(list_of_conflicting_constraints, con)
+                        marker = true
+                    end
+                end
+            end
+            if marker == false
+                println(list_of_conflicting_constraints)
+            end
+            
+            outpath_buriedlines = joinpath(outpath_buriedlines,"1")
+            # Write results
+    	    write_outputs(EP, outpath_buriedlines, setup, inputs)
+    	elseif setup["MinLNG"]==1
+    	    println("Min LNG")
+	        @objective(EP,Min,sum(EP[:vCAP][g] for g in findall(x -> x == 1, dfGen[!,:LNG])))
+	        status = optimize!(EP)
+	        compute_conflict!(EP)
+    	    list_of_conflicting_constraints = ConstraintRef[]
+            for (F, S) in list_of_constraint_types(EP)
+                for con in all_constraints(EP, F, S)
+                    if MOI.get(EP, MOI.ConstraintConflictStatus(), con) == MOI.IN_CONFLICT
+                        push!(list_of_conflicting_constraints, con)
+                        marker = true
+                    end
+                end
+            end
+            if marker == false
+                println(list_of_conflicting_constraints)
+            end
+            
+            outpath_minlng = joinpath(outpath_minlng,"1")
+            # Write results
+    	    write_outputs(EP, outpath_minlng, setup, inputs)
+	    else 
+    	    for i in 1:setup["ModelingToGenerateAlternativeIterations"]
+    
+    	    	# Create random coefficients for the generators that we want to include in the MGA run for the given budget
+    	    	pRand = rand(length(unique(dfGen[dfGen[!, :MGA] .== 1, :Resource_Type])),length(unique(dfGen[!,:Zone])))
+    
+    	    	### Maximization objective
+    	    	@objective(EP, Max, sum(pRand[tt,z] * vSumvP[tt,z] for tt in 1:length(TechTypes), z in 1:Z ))
+    
+    	    	# Solve Model Iteration
+    	    	status = optimize!(EP)
+    	    	
+    	    	compute_conflict!(EP)
+    	    	list_of_conflicting_constraints = ConstraintRef[]
+                for (F, S) in list_of_constraint_types(model)
+                    for con in all_constraints(model, F, S)
+                        if MOI.get(model, MOI.ConstraintConflictStatus(), con) == MOI.IN_CONFLICT
+                            push!(list_of_conflicting_constraints, con)
+                            marker = true
+                        end
+                    end
+                end
+                if marker == false
+                    println(list_of_conflicting_constraints)
+                end
+    
+                # Create path for saving MGA iterations
+    	    	mgaoutpath_max = joinpath(outpath_max, string("MGA", "_", slack,"_", i))
+    
+    	    	# Write results
+    	    	write_outputs(EP, mgaoutpath_max, setup, inputs)
+    
+    	    	### Minimization objective
+    	    	@objective(EP, Min, sum(pRand[tt,z] * vSumvP[tt,z] for tt in 1:length(TechTypes), z in 1:Z ))
+    
+    	    	# Solve Model Iteration
+    	    	status = optimize!(EP)
+    
+                # Create path for saving MGA iterations
+    	    	mgaoutpath_min = joinpath(outpath_min, string("MGA", "_", slack,"_", i))
+    
+    	    	# Write results
+    	    	write_outputs(EP, mgaoutpath_min, setup, inputs)
+    
+    	    end
+        end
+        
 	    total_time = time() - mga_start_time
 	    ### End MGA Iterations ###
 	end

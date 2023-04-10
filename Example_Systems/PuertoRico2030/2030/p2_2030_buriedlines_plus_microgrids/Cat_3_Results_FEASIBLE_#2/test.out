@@ -1,0 +1,148 @@
+Version identifier: 22.1.0.0 | 2022-03-09 | 1a383f8ce
+CPXPARAM_LPMethod                                4
+CPXPARAM_SolutionType                            2
+CPXPARAM_Simplex_Tolerances_Optimality           1.0000000000000001e-05
+CPXPARAM_Simplex_Tolerances_Feasibility          1.0000000000000001e-05
+CPXPARAM_TimeLimit                               110000
+CPXPARAM_MIP_Tolerances_MIPGap                   0.001
+CPXPARAM_Barrier_Limits_ObjRange                 9.9999999999999993e+74
+Tried aggregator 1 time.
+LP Presolve eliminated 2189353 rows and 286393 columns.
+Aggregator did 43800 substitutions.
+Reduced LP has 2006712 rows, 1378008 columns, and 7416336 nonzeros.
+Presolve time = 8.76 sec. (4606.18 ticks)
+Parallel mode: using up to 32 threads for barrier.
+Number of nonzeros in lower triangle of A*A' = 13307112
+Using Nested Dissection ordering
+Total time for automatic ordering = 15.44 sec. (15394.62 ticks)
+Summary statistics for Cholesky factor:
+  Threads                   = 32
+  Rows in Factor            = 2006712
+  Integer space required    = 7302686
+  Total non-zeros in factor = 58824433
+  Total FP ops to factor    = 11244539187
+ Itn      Primal Obj        Dual Obj  Prim Inf Upper Inf  Dual Inf Inf Ratio
+   0   5.7204149e+02  -1.9528857e+06  2.99e+06  1.15e+06  1.72e+06  1.00e+00
+   1   5.4866962e+02  -3.4861993e+05  3.90e+05  1.51e+05  3.07e+05  9.92e+00
+   2   5.4620272e+02  -6.4705146e+04  2.76e+04  1.06e+04  5.74e+04  6.24e+01
+   3   5.4601168e+02  -4.4401991e+03  1.03e+03  4.00e+02  4.38e+03  9.00e+02
+   4   5.4547780e+02  -6.5576686e+02  4.12e+02  1.59e+02  1.06e+03  2.99e+03
+   5   5.4525147e+02   2.7498152e+02  1.30e+02  5.04e+01  2.38e+02  1.34e+04
+   6   5.4507940e+02   4.5693643e+02  2.45e+01  9.46e+00  7.75e+01  4.12e+04
+   7   5.4499846e+02   5.0673381e+02  1.25e+01  4.84e+00  3.36e+01  9.50e+04
+   8   5.4496445e+02   5.1970429e+02  9.87e+00  3.81e+00  2.22e+01  1.44e+05
+   9   5.4493992e+02   5.2630351e+02  8.23e+00  3.18e+00  1.64e+01  1.96e+05
+  10   5.4492073e+02   5.3000326e+02  7.12e+00  2.75e+00  1.31e+01  2.45e+05
+  11   5.4490347e+02   5.3283573e+02  6.22e+00  2.40e+00  1.06e+01  3.02e+05
+  12   5.4488936e+02   5.3512546e+02  5.53e+00  2.14e+00  8.55e+00  3.74e+05
+  13   5.4487444e+02   5.3894882e+02  4.63e+00  1.79e+00  5.17e+00  6.19e+05
+  14   5.4484553e+02   5.4141294e+02  2.57e+00  9.93e-01  3.00e+00  1.07e+06
+  15   5.4483319e+02   5.4288846e+02  1.72e+00  6.65e-01  1.69e+00  1.89e+06
+  16   5.4482846e+02   5.4338364e+02  1.39e+00  5.39e-01  1.26e+00  2.54e+06
+  17   5.4482418e+02   5.4382035e+02  1.10e+00  4.23e-01  8.72e-01  3.66e+06
+  18   5.4482079e+02   5.4397331e+02  8.55e-01  3.30e-01  7.37e-01  4.33e+06
+  19   5.4481898e+02   5.4449751e+02  7.20e-01  2.78e-01  2.75e-01  1.16e+07
+  20   5.4481432e+02   5.4468036e+02  3.73e-01  1.44e-01  1.14e-01  2.79e+07
+  21   5.4481257e+02   5.4475737e+02  2.43e-01  9.39e-02  4.58e-02  6.86e+07
+  22   5.4481055e+02   5.4479416e+02  7.71e-02  2.98e-02  1.35e-02  2.26e+08
+  23   5.4481028e+02   5.4480555e+02  1.90e-02  7.33e-03  3.92e-03  7.79e+08
+  24   5.4481023e+02   5.4480908e+02  4.78e-03  1.85e-03  9.53e-04  3.20e+09
+  25   5.4481021e+02   5.4480999e+02  1.02e-03  3.96e-04  1.81e-04  1.68e+10
+  26   5.4481021e+02   5.4481018e+02  1.04e-04  4.00e-05  2.48e-05  1.23e+11
+  27   5.4481021e+02   5.4481021e+02  1.74e-05  6.72e-06  3.00e-06  1.01e+12
+  28   5.4481021e+02   5.4481021e+02  6.53e-09  2.06e-09  8.76e-09  3.47e+14
+Barrier time = 108.70 sec. (41752.94 ticks)
+
+Total time on 32 threads = 108.70 sec. (41752.94 ticks)
+Configuring Settings
+Configuring Solver
+Loading Inputs
+Reading Input CSV Files
+Network.csv Successfully Read!
+Load_data.csv Successfully Read!
+Fuels_data.csv Successfully Read!
+Generators_data.csv Successfully Read!
+Generators_variability.csv Successfully Read!
+CSV Files Successfully Read In From /home/aerivera/GenX-Local/GenX/Example_Systems/PuertoRico2030/2030/p2_2030_buriedlines_plus_microgrids
+Generating the Optimization Model
+Discharge Module
+Non-served Energy Module
+Investment Discharge Module
+Unit Commitment Module
+Emissions Module (for CO2 Policy modularization
+Transmission Module
+Dispatchable Resources Module
+Must-Run Resources Module
+Storage Resources Module
+Storage Investment Module
+Storage Core Resources Module
+Storage Resources with Symmetric Charge/Discharge Capacity Module
+Hydro Reservoir Core Resources Module
+Thermal (Unit Commitment) Resources Module
+C02 Policies Module
+HurricaneSim is on
+Starting hurricane sim
+There is a North-to-South buried line!
+There is a North-to-East buried line!
+There is a South-to-West buried line!
+6096
+6144
+3
+Checking substations
+Peak demand in zone:
+468.0
+Number of substations:
+24
+Checking substations
+Peak demand in zone:
+1516.0
+Number of substations:
+76
+Checking substations
+Peak demand in zone:
+323.0
+Number of substations:
+17
+Checking substations
+Peak demand in zone:
+183.0
+Number of substations:
+10
+Returning outputs
+Writing hurricane outputs
+3
+Solving Model
+LP solved for primal
+Writing Output
+Time elapsed for writing costs is
+1.691358378
+Time elapsed for writing storage is
+0.703992236
+Time elapsed for writing nse is
+1.445237588
+Time elapsed for writing power balance is
+1.872602683
+Time elapsed for writing transmission flows is
+0.392543943
+Time elapsed for writing transmission losses is
+0.21289739
+Time elapsed for writing emissions is
+4.342909971
+Time elapsed for writing reliability is
+0.775788976
+Time elapsed for writing storage duals is
+1.027139977
+Time elapsed for writing commitment is
+0.488735177
+Time elapsed for writing startup is
+0.574287714
+Time elapsed for writing shutdown is
+0.58245345
+Time elapsed for writing time weights is
+0.184595807
+Time elapsed for writing net revenue is
+1.988358299
+Wrote outputs to /home/aerivera/GenX-Local/GenX/Example_Systems/PuertoRico2030/2030/p2_2030_buriedlines_plus_microgrids/Results
+Time elapsed for writing is
+27.516694578
+Mon Apr 10 13:13:22 EDT 2023

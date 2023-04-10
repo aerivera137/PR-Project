@@ -1,0 +1,25 @@
+ERROR: LoadError: KeyError: key 4 not found
+Stacktrace:
+  [1] getindex
+    @ ./dict.jl:482 [inlined]
+  [2] getindex
+    @ ~/.julia/packages/JuMP/yYfHy/src/Containers/DenseAxisArray.jl:51 [inlined]
+  [3] _getindex_recurse
+    @ ~/.julia/packages/JuMP/yYfHy/src/Containers/DenseAxisArray.jl:330 [inlined]
+  [4] to_index
+    @ ~/.julia/packages/JuMP/yYfHy/src/Containers/DenseAxisArray.jl:339 [inlined]
+  [5] getindex(A::JuMP.Containers.DenseAxisArray{JuMP.VariableRef, 1, Tuple{Vector{Int64}}, Tuple{JuMP.Containers._AxisLookup{Dict{Int64, Int64}}}}, idx::Int64)
+    @ JuMP.Containers ~/.julia/packages/JuMP/yYfHy/src/Containers/DenseAxisArray.jl:346
+  [6] macro expansion
+    @ ~/.julia/packages/MutableArithmetics/9dpep/src/rewrite.jl:322 [inlined]
+  [7] macro expansion
+    @ ~/.julia/packages/JuMP/yYfHy/src/macros.jl:1293 [inlined]
+  [8] mga(EP::JuMP.Model, path::String, setup::Dict{Any, Any}, inputs::Dict{Any, Any}, outpath::String)
+    @ GenX ~/GenX-Local/GenX/src/additional_tools/modeling_to_generate_alternatives.jl:154
+  [9] run_genx_case_simple!(case::String, mysetup::Dict{Any, Any})
+    @ GenX ~/GenX-Local/GenX/src/case_runners/case_runner.jl:91
+ [10] run_genx_case!(case::String)
+    @ GenX ~/GenX-Local/GenX/src/case_runners/case_runner.jl:37
+ [11] top-level scope
+    @ ~/GenX-Local/GenX/Example_Systems/PuertoRico2030/2030/p2_2030_underground_lines/Run.jl:19
+in expression starting at /home/aerivera/GenX-Local/GenX/Example_Systems/PuertoRico2030/2030/p2_2030_underground_lines/Run.jl:19

@@ -242,10 +242,12 @@ function transmission!(EP::Model, inputs::Dict, setup::Dict)
 
 	# Maximum power flows, power flow on each transmission line cannot exceed maximum capacity of the line at any hour "t"
 	# Allow expansion of transmission capacity for lines eligible for reinforcement
-	@constraints(EP, begin
-		cMaxFlow_out[l=1:L, t=1:T], vFLOW[l,t] <= eAvail_Trans_Cap[l]
-		cMaxFlow_in[l=1:L, t=1:T], vFLOW[l,t] >= -eAvail_Trans_Cap[l]
-	end)
+	if setup["HurricaneSim"]==0
+    	@constraints(EP, begin
+    		cMaxFlow_out[l=1:L, t=1:T], vFLOW[l,t] <= eAvail_Trans_Cap[l]
+    		cMaxFlow_in[l=1:L, t=1:T], vFLOW[l,t] >= -eAvail_Trans_Cap[l]
+    	end)
+    end
 
 	# If network expansion is used:
 	if NetworkExpansion == 1
